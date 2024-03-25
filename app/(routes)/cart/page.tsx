@@ -7,10 +7,10 @@ import useCart from "@/hooks/useCart";
 import { useEffect, useState } from "react";
 
 const CardPage = () => {
-  //   const [isMounted, setIsMounted] = useState(false);
-  //   useEffect(() => setIsMounted(false), []);
-  //   if (!isMounted) return null;
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => setIsMounted(false), []);
   const cart = useCart();
+  if (!isMounted) return null;
   return (
     <div className="bg-white">
       <Container>
@@ -27,7 +27,7 @@ const CardPage = () => {
                 ))}
               </ul>
             </div>
-            <Summary/>
+            <Summary />
           </div>
         </div>
       </Container>
